@@ -61,9 +61,7 @@ def checkErrors(dataframe1, dataframe2, key):
             "Data Error : The set of key attributes does not uniquely identify records in dataframe2."
         )
 
-
-class UniqueRecords:
-    def getUniqueRecords(dataframe1, dataframe2, key=[]):
+def getUniqueRecords(dataframe1, dataframe2, key=[]):
 
         """
             :rtype: Pandas DataFrame

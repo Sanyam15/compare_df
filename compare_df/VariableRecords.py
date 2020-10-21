@@ -68,8 +68,7 @@ def checkMetricsError(dataframe1, dataframe2, key, metrics):
             "Some columns were present in both: " + str(intersection_key_metrics) + "."
         )
 
-class VariableRecords:
-    def getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True):
+def getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True):
         """
             :rtype: Pandas DataFrame
             :param dataframe1: Pandas DataFrame : The first Input DataFrame(X), also referred as left.

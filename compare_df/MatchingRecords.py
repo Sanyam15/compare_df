@@ -40,8 +40,7 @@ def checkError(dataframe1, dataframe2, common_columns):
         )
 
 
-class MatchingRecords:
-    def getMatchingRecords(
+def getMatchingRecords(
         dataframe1=None,
         dataframe2=None,
         common_columns=None,

@@ -3,7 +3,7 @@
 This package has collection of functions which can be used to compare two dataframes. These functions can help in validation, where there is a need to compare if any of the metrics value has been altered or to get matching records in the two dataframes. The package serves best when the two dataframes have same schema and from the same source. 
 In validation, if you are comparing two datas which may have changed over the time, this package can help you in the analysis and save the time spent in BI Tools for the analysis.
 
-###### **Function I : getMatchingRecords(dataframe1=None,dataframe2=None,common_columns=None)**
+### **Function I : getMatchingRecords(dataframe1=None,dataframe2=None,common_columns=None)**
 
 This function returns a dataframe which contains identical records for the
 passed list of columns (default :- all columns) in the two dataframes.
@@ -32,7 +32,7 @@ MatchingRecords.getMatchingRecords(df1,df2,common_columns=["Prduct_no","Product_
 This returns df with the records of Values of columns ["Prduct_no","Product_Category"] which were found in both dataframes.
 
 
-###### **Function 2 : getUniqueRecords(dataframe1=None,dataframe2=None,key=[])**
+### **Function 2 : getUniqueRecords(dataframe1=None,dataframe2=None,key=[])**
 
 This function receives two dataframes and list of key attributes.
 These attributes should identify a record in both dataframe uniquely.
@@ -63,7 +63,7 @@ UniqueRecords.getMatchingRecords(df1,df2,common_columns=["Department","Emp_id"])
 This returns df for which the key attributes : ["Prduct_no","Product_Category"] are present in only one of the dataframe.
 
 
-###### **Function 3 : getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True)**
+### **Function 3 : getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True)**
 
 This function receives two dataframes and list of key attributes and metric attributes and a boolean attribute -> 'unique'.
 These attributes should identify a record in both dataframe uniquely.
