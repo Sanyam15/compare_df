@@ -125,9 +125,7 @@ one dataframe.
   url = 'https://github.com/Sanyam15/compare_df',
   download_url = 'https://github.com/Sanyam15/compare_df/archive/v0.2.tar.gz',
   keywords = ['Machine Learning', 'Comparison', 'Excel','CSV','Pandas', 'DataFrame', 'Validation'],
-  install_requires=[
-          'pandas',
-      ],
+  install_requires=['pandas'],
   classifiers=[
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers, Testers',
