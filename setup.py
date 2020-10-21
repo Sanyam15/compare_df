@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name = 'compare-df',
-  packages = ['compare-df'],
+  name = 'compare_df',
+  packages = ['compare_df'],
   version = '0.1',
   license='MIT',
   description = 'A collection of function which can be used to compare two dataframes.',
@@ -18,7 +18,7 @@ passed list of columns (default :- all columns) in the two dataframes.
 
 **IMPORT**:
 
-_from CompareDataframe.MatchingRecords import *_
+_from compare_df.MatchingRecords import *_
 
 **The Parameters:**-
 
@@ -33,7 +33,7 @@ This Returns a dataframe which holds the records which have identical value for 
 
 **Example**:
 
-from CompareDataframe.MatchingRecords import *
+from compare_df.MatchingRecords import *
 
 MatchingRecords.getMatchingRecords(df1,df2,common_columns=["Prduct_no","Product_Category"])
 
@@ -49,7 +49,7 @@ The dataframe has a column named 'Dataframe' which tells in which dataframe does
 
 **IMPORT**:
 
-_from CompareDataframe.UniqueRecords import *_
+_from compare_df.UniqueRecords import *_
 
 **The Parameters:**-
 
@@ -64,7 +64,7 @@ This Returns a dataframe which holds the records which are uniquely present in t
 
 **Example**:
 
-from CompareDataframe.UniqueRecords import *
+from compare_df.UniqueRecords import *
 
 UniqueRecords.getMatchingRecords(df1,df2,common_columns=["Department","Emp_id"])
 
@@ -88,7 +88,7 @@ If param -> 'unique' is set to False:
 
 **IMPORT**:
 
-_from CompareDataframe.VariableRecords import *_
+_from compare_df.VariableRecords import *_
 
 **The Parameters:**-
 
@@ -109,7 +109,7 @@ between the two dataframes for the respective key values
 
 **Example**:
 
-from CompareDataframe.VariableRecords import *
+from compare_df.VariableRecords import *
 
 VariableRecords.getVariableRecords(df1,df2,key=["Department","Emp_id"],metrics=["ratings","contact"])
 
