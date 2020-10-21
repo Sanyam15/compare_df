@@ -79,6 +79,7 @@ class VariableRecords:
                             default -> Columns in dataframe1 other than the key columns.
             :param unique : Boolean : If True, returns only the records with Comparison tagged as Mismatch ;
                                       If False, returns all the irregularities.
+                            Default -> True
         """
         #Unique should have boolean values
         if unique not in [0, 1]:
@@ -121,7 +122,7 @@ class VariableRecords:
 
         return (
             variable_dataframe[
-                key + ["Column", "Comparison", "left_value", "right_value"]
+                key + ["Column","left_value", "right_value","Comparison"]
             ]
             .sort_values(by=["Comparison", "Column"])
             .reset_index(drop=True)

@@ -63,14 +63,18 @@ def checkErrors(dataframe1, dataframe2, key):
 
 
 class UniqueRecords:
-    def getUniqueRecords(dataframe1, dataframe2, key):
+    def getUniqueRecords(dataframe1, dataframe2, key=[]):
 
         """
             :rtype: Pandas DataFrame
             :param dataframe1: The first Input DataFrame(X), also referred as left.
             :param dataframe2:The second Input DataFrame(X), also referred as right.
             :param key: The list of columns present in both dataframes which must identify a record in dataframe uniquely.
+                        default->all columns of dataframe1
         """
+        if key==[]:
+            key=list(dataframe1.columns)
+
         #Metrics has columns other than key attributes
         metrics = [ele for ele in list(dataframe1.columns) if ele not in key]
 
@@ -94,6 +98,7 @@ class UniqueRecords:
             joined_dataframe[col] = joined_dataframe.apply(
                 lambda row: getValue(row, column=col), axis=1
             )
+
         ''' 
         Returning the dataframe with unique records with the column -> 'Dataframe'
         which states which dataframe does the records belong to.
