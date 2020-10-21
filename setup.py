@@ -53,9 +53,7 @@ This Returns a dataframe which holds the records which have identical value for 
 
 **Example**:
 
-from compare_df.MatchingRecords import *
-
-MatchingRecords.getMatchingRecords(df1,df2,common_columns=["Prduct_no","Product_Category"])
+getMatchingRecords(df1,df2,common_columns=["Prduct_no","Product_Category"])
 
 This returns df with the records of Values of columns ["Prduct_no","Product_Category"] which were found in both dataframes.
 
@@ -84,9 +82,7 @@ This Returns a dataframe which holds the records which are uniquely present in t
 
 **Example**:
 
-from compare_df.UniqueRecords import *
-
-UniqueRecords.getMatchingRecords(df1,df2,common_columns=["Department","Emp_id"])
+getMatchingRecords(df1,df2,common_columns=["Department","Emp_id"])
 
 This returns df for which the key attributes : ["Prduct_no","Product_Category"] are present in only one of the dataframe.
 
@@ -137,9 +133,7 @@ between the two dataframes for the respective key values
 
 **Example**:
 
-from compare_df.VariableRecords import *
-
-VariableRecords.getVariableRecords(df1,df2,key=["Department","Emp_id"],metrics=["ratings","contact"])
+getVariableRecords(df1,df2,key=["Department","Emp_id"],metrics=["ratings","contact"])
 
 The function will check for each column in metrics for all key records, check if both dataframe has same values,
 If the values are different then the key value, column name, value in the two dataframes would be returned.
@@ -149,7 +143,7 @@ one dataframe.
 Change Log
 ==========
 
-0.0.1 (21/10/2020)
+0.0.2 (21/10/2020)
 -------------------
 - First Release
 
