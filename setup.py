@@ -118,6 +118,13 @@ If the values are different then the key value, column name, value in the two da
 Along with a Comparison column which state whether there is Mismatch in the values, or the value is present in only 
 one dataframe.
 
+Change Log
+==========
+
+0.0.1 (21/10/2020)
+-------------------
+- First Release
+
 """,
   long_description_content_type="text/x-rst",
   author = 'Sanyam Gupta',
