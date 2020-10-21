@@ -16,7 +16,7 @@ If param -> 'unique' is set to False:
 import pandas as pd
 
 #Import functions to checck for errors
-from CompareDataframe.UniqueRecords import isNaN, checkErrors
+from compare_df.UniqueRecords import isNaN, checkErrors
 
 #Tag the irregularity for a key-column combination
 def getRecords(row, column, key=[]):
