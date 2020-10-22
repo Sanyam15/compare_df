@@ -85,7 +85,8 @@ def getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True):
             raise TypeError('Expects a boolean value for the parameter -> "unique"')
 
         # Seeting default value for metrics
-        metrics = [ele for ele in list(dataframe1.columns) if ele not in key]
+        if(metrics==None):
+            metrics = [ele for ele in list(dataframe1.columns) if ele not in key]
 
         # Check for Errors
         checkErrors(dataframe1, dataframe2, key=key)
