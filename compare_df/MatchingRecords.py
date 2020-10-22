@@ -13,11 +13,6 @@ def checkError(dataframe1, dataframe2, common_columns):
         raise ValueError(
             'Data Error : The parameter -> "common_columns" is empty or dataframe has no columns'
         )
-    # Error : If either of dataframe is not pandas dataframe
-    if not isinstance(dataframe1, pd.DataFrame):
-        raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe1"')
-    if not isinstance(dataframe2, pd.DataFrame):
-        raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe2"')
 
     # Error : If the param -> 'common_columns' has column/s which do not exist
     res1 = [ele for ele in common_columns if ele not in list(dataframe1.columns)]
@@ -51,6 +46,11 @@ def getMatchingRecords(
             :param dataframe2:The second Input DataFrame(X)
             :param common_columns: The list of columns for which the two dataframes have to be compared. default : All columns of dataframe1
         """
+        # Error : If either of dataframe is not pandas dataframe
+        if not isinstance(dataframe1, pd.DataFrame):
+            raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe1"')
+        if not isinstance(dataframe2, pd.DataFrame):
+            raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe2"')
 
         #Setting default argument for common_columns
         if common_columns is None:

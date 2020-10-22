@@ -21,10 +21,7 @@ def getValue(field, column):
 
 def checkErrors(dataframe1, dataframe2, key):
     #Passed argument should match the datatype
-    if not isinstance(dataframe1, pd.DataFrame):
-        raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe1"')
-    if not isinstance(dataframe2, pd.DataFrame):
-        raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe2"')
+
     if not isinstance(key, list):
         raise TypeError('Expects <list> for the parameter -> "metrics"')
 
@@ -70,6 +67,11 @@ def getUniqueRecords(dataframe1, dataframe2, key=[]):
             :param key: The list of columns present in both dataframes which must identify a record in dataframe uniquely.
                         default->all columns of dataframe1
         """
+        if not isinstance(dataframe1, pd.DataFrame):
+            raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe1"')
+        if not isinstance(dataframe2, pd.DataFrame):
+            raise TypeError('Expects pd.DataFrame for the parameter -> "dataframe2"')
+
         if key==[]:
             key=list(dataframe1.columns)
 
