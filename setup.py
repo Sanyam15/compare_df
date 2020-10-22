@@ -3,7 +3,7 @@ import setuptools
 setup(
   name = 'compare_df',
   packages = ['compare_df'],
-  version = '0.1',
+  version = '0.3',
   license='MIT',
   description = 'A collection of function which can be used to compare two dataframes.',
   long_description_content_type="""text/x-rst""",
@@ -143,7 +143,7 @@ one dataframe.
 Change Log
 ==========
 
-0.0.2 (21/10/2020)
+0.0.3 (21/10/2020)
 -------------------
 - First Release
 
