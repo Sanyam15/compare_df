@@ -3,7 +3,7 @@ import setuptools
 setup(
   name = 'compare_df',
   packages = ['compare_df'],
-  version = '0.5',
+  version = '0.6',
   license='MIT',
   description = 'A collection of function which can be used to compare two dataframes.',
   long_description_content_type="""text/x-rst""",
@@ -140,10 +140,10 @@ If the values are different then the key value, column name, value in the two da
 Along with a Comparison column which state whether there is Mismatch in the values, or the value is present in only 
 one dataframe.
 
-Change Log
+LOG
 ==========
 
-0.0.5 (22/10/2020)
+0.0.6 (02/11/2020)
 -------------------
 - First Release
 
