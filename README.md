@@ -3,14 +3,14 @@
 This package has collection of functions which can be used to compare two dataframes. These functions can help in validation, where there is a need to compare if any of the metrics value has been altered or to get matching records in the two dataframes. The package serves best when the two dataframes have same schema and from the same source. 
 In validation, if you are comparing two datas which may have changed over the time, this package can help you in the analysis and save the time spent in BI Tools for the analysis.
 
+**IMPORT**:
+
+_from compare_df import *_
+
 ### **Function I : getMatchingRecords(dataframe1=None,dataframe2=None,common_columns=None)**
 
 This function returns a dataframe which contains identical records for the
 passed list of columns (default :- all columns) in the two dataframes.
-
-**IMPORT**:
-
-_from CompareDataframe.MatchingRecords import *_
 
 **The Parameters:**-
 
@@ -25,9 +25,8 @@ This Returns a dataframe which holds the records which have identical value for 
 
 **Example**:
 
-from CompareDataframe.MatchingRecords import *
-
-MatchingRecords.getMatchingRecords(df1,df2,common_columns=["Prduct_no","Product_Category"])
+from compare_df import *
+getMatchingRecords(df1,df2,common_columns=["Prduct_no","Product_Category"])
 
 This returns df with the records of Values of columns ["Prduct_no","Product_Category"] which were found in both dataframes.
 
@@ -38,10 +37,6 @@ This function receives two dataframes and list of key attributes.
 These attributes should identify a record in both dataframe uniquely.
 It returns a dataframe with those records which are only present in either of the dataframe.
 The dataframe has a column named 'Dataframe' which tells in which dataframe does the record exist
-
-**IMPORT**:
-
-_from CompareDataframe.UniqueRecords import *_
 
 **The Parameters:**-
 
@@ -56,9 +51,8 @@ This Returns a dataframe which holds the records which are uniquely present in t
 
 **Example**:
 
-from CompareDataframe.UniqueRecords import *
-
-UniqueRecords.getMatchingRecords(df1,df2,common_columns=["Department","Emp_id"])
+from compare_df import *
+getMatchingRecords(df1,df2,common_columns=["Department","Emp_id"])
 
 This returns df for which the key attributes : ["Prduct_no","Product_Category"] are present in only one of the dataframe.
 
@@ -77,10 +71,6 @@ If param -> 'unique' is set to True:
     Only the Records tagged as "Mismatch" are returned
 If param -> 'unique' is set to False:
     All the Irregular Records are returned
-
-**IMPORT**:
-
-_from CompareDataframe.VariableRecords import *_
 
 **The Parameters:**-
 
@@ -101,9 +91,8 @@ between the two dataframes for the respective key values
 
 **Example**:
 
-from CompareDataframe.VariableRecords import *
-
-VariableRecords.getVariableRecords(df1,df2,key=["Department","Emp_id"],metrics=["ratings","contact"])
+from compare_df import *
+getVariableRecords(df1,df2,key=["Department","Emp_id"],metrics=["ratings","contact"])
 
 The function will check for each column in metrics for all key records, check if both dataframe has same values,
 If the values are different then the key value, column name, value in the two dataframes would be returned.
