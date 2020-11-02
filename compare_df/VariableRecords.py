@@ -1,7 +1,7 @@
 '''
 This function receives two dataframes and list of key attributes and metric attributes and a boolean attribute -> 'unique'.
-These attributes should identify a record in both dataframe uniquely.
 Metric attributes are those attributes for which you want to compare the value between the two dataframes.
+Key along with each metric column should uniquely identify records in both the dataframe.
 The function returns the key values and the metric column for which irregularity was encountered.
 It classify the irregularity into three classes:
     Mismatch : If key values are present in both dataframe, but there is a mismatch for the column value
@@ -68,6 +68,8 @@ def checkMetricsError(dataframe1, dataframe2, key, metrics):
             "Some columns were present in both: " + str(intersection_key_metrics) + "."
         )
 
+
+
 def getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True):
         """
             :rtype: Pandas DataFrame
@@ -96,6 +98,17 @@ def getVariableRecords(dataframe1, dataframe2, key, metrics=[], unique=True):
 
         # Iteratively take each metrics column and compare the values return by the two dataframes
         for col in metrics:
+
+            # Key along with each metric column should uniquely identify records in both the dataframe
+            if dataframe1.set_index(key+["col"]).index.is_unique == False:
+                raise KeyError(
+                    "Data Error : The set of key attributes does not uniquely identify records in dataframe1."
+                )
+            if dataframe2.set_index(key+["col"]).index.is_unique == False:
+                raise KeyError(
+                    "Data Error : The set of key attributes does not uniquely identify records in dataframe2."
+                )
+
             left_dataframe = dataframe1[key + [col]]
             right_dataframe = dataframe2[key + [col]]
             temp_dataframe = pd.merge(

@@ -48,16 +48,6 @@ def checkErrors(dataframe1, dataframe2, key):
             "Data Error : Could not find Key columns: " + str(res2) + " in dataframe2"
         )
 
-    #Key should uniquely identify records in both the dataframe
-    if dataframe1.set_index(key).index.is_unique == False:
-        raise KeyError(
-            "Data Error : The set of key attributes does not uniquely identify records in dataframe1."
-        )
-    if dataframe2.set_index(key).index.is_unique == False:
-        raise KeyError(
-            "Data Error : The set of key attributes does not uniquely identify records in dataframe2."
-        )
-
 def getUniqueRecords(dataframe1, dataframe2, key=[]):
 
         """
@@ -79,6 +69,16 @@ def getUniqueRecords(dataframe1, dataframe2, key=[]):
         metrics = [ele for ele in list(dataframe1.columns) if ele not in key]
 
         checkErrors(dataframe1, dataframe2, key)
+
+        # Key should uniquely identify records in both the dataframe
+        if dataframe1.set_index(key).index.is_unique == False:
+            raise KeyError(
+                "Data Error : The set of key attributes does not uniquely identify records in dataframe1."
+            )
+        if dataframe2.set_index(key).index.is_unique == False:
+            raise KeyError(
+                "Data Error : The set of key attributes does not uniquely identify records in dataframe2."
+            )
 
         #Selecting the Key attributes
         dataframe1_key = dataframe1[key]
