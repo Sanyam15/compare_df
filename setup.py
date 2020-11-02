@@ -31,14 +31,14 @@ setup(
 This package has collection of functions that can be used to compare two dataframes. These functions can help in validation, where there is a need to compare if any of the metrics value has been altered or to get matching records in the two dataframes. The package serves best when the two data frames have same schema and from the same source. 
 In validation, if you are comparing two datas which may have changed over the time, this package can help you in the analysis and save the time spent in BI Tools for the analysis.
 
+**IMPORT**:
+
+from compare_df import *
+
  **Function I : getMatchingRecords(dataframe1=None,dataframe2=None,common_columns=None)**
 
 This function returns a dataframe which contains identical records for the
 passed list of columns (default :- all columns) in the two dataframes.
-
-**IMPORT**:
-
-from compare_df.MatchingRecords import *
 
 **The Parameters:**
 
@@ -64,10 +64,6 @@ This function receives two dataframes and list of key attributes.
 These attributes should identify a record in both dataframe uniquely.
 It returns a dataframe with those records which are only present in either of the dataframe.
 The dataframe has a column named 'Dataframe' which tells in which dataframe does the record exist
-
-**IMPORT**:
-
-from compare_df.UniqueRecords import *
 
 **The Parameters:**-
 
@@ -105,10 +101,6 @@ If param - 'unique' is set to True:
     Only the Records tagged as "Mismatch" are returned
 If param - 'unique' is set to False:
     All the Irregular Records are returned
-
-**IMPORT**:
-
-from compare_df.VariableRecords import *
 
 **The Parameters:**-
 
